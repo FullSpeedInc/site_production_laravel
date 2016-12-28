@@ -1,0 +1,21 @@
+#!/usr/bin/env php
+<?php
+
+exec('git status -uno --short | grep -E \'^[AUM].*.php$\'| cut -c3-', $changes);
+
+$isError =false;
+
+foreach ($changes as $file) {
+    $results = [];
+    exec('php -l '.trim($file), $results);
+    foreach ($results as $result) {
+        if (preg_match('/Fatal error/', $result)) {
+            echo $result . PHP_EOL;
+            $isError = true;
+        }
+    }
+}
+
+if (!$isError) {
+    echo 'Syntax check is OK !!' . PHP_EOL;
+}

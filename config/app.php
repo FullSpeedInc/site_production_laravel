@@ -39,7 +39,7 @@ return [
     |
     */
 
-    'timezone' => 'UTC',
+    'timezone' => 'Asia/Tokyo',
 
     /*
     |--------------------------------------------------------------------------
@@ -52,7 +52,7 @@ return [
     |
     */
 
-    'locale' => 'en',
+    'locale' => 'ja',
 
     /*
     |--------------------------------------------------------------------------
@@ -145,6 +145,25 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
+        /**
+         * Develop用のパッケージを読み込む
+         */
+        App\Providers\DevelopServiceProvider::class,
+
+        /**
+         * Html & Form
+         */
+        Collective\Html\HtmlServiceProvider::class,
+
+        /**
+         * Image Plugin
+         */
+        Intervention\Image\ImageServiceProvider::class,
+
+        /**
+         * l5-repository
+         */
+        Prettus\Repository\Providers\RepositoryServiceProvider::class,
     ],
 
     /*
@@ -192,6 +211,17 @@ return [
         'URL'       => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View'      => Illuminate\Support\Facades\View::class,
+
+        /**
+         * Html & Form
+         */
+        'Form' => Collective\Html\FormFacade::class,
+        'Html' => Collective\Html\HtmlFacade::class,
+
+        /**
+         * Image Plugin php-gd必須
+         */
+        'Image' => Intervention\Image\Facades\Image::class
 
     ],
 

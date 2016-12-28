@@ -16,7 +16,7 @@
 
     <!-- コードの品質を検査 -->
     <target name="phpmd">
-        <exec command="vendor/bin/phpmd ./ text codesize,controversial,design,naming,unusedcode --exclude vendor/,database/,public/" logoutput="true" />
+        <exec command="vendor/bin/phpmd ./ text codesize,controversial,design,naming,unusedcode --exclude vendor/,database/,public/,bootstrap/cache/" logoutput="true" />
     </target>
 
     <!-- コミット予定ファイルからsyntaxError検出 -->

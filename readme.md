@@ -1,6 +1,10 @@
-# 構成について
+## 構成について
 
 https://github.com/FullSpeedInc/site_production_laravel/wiki/5.1
+
+## buildツールのphingについて
+
+https://github.com/FullSpeedInc/site_production_laravel/wiki/phing
 
 ## Laravel PHP Framework
 

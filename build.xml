@@ -14,20 +14,10 @@
         <exec command="vendor/bin/php-cs-fixer fix -v" logoutput="true" />
     </target>
 
-    <!-- コードの品質を検査 -->
-    <target name="phpmd">
-        <exec command="vendor/bin/phpmd ./ text codesize,controversial,design,naming,unusedcode --exclude vendor/,database/,public/,bootstrap/cache/" logoutput="true" />
-    </target>
-
     <!-- コミット予定ファイルからsyntaxError検出 -->
     <target name="syntaxCheck">
         <exec command="php syntaxCheck" logoutput="true" />
     </target>
 
-    <!-- ユニットテスト実行 -->
-    <target name="phpunit">
-        <exec command="vendor/bin/phpunit" logoutput="true" />
-    </target>
-
-    <target name="build" depends="prepare, php-cs-fixer, phpmd, syntaxCheck, phpunit" />
+    <target name="build" depends="prepare, php-cs-fixer, syntaxCheck" />
 </project>

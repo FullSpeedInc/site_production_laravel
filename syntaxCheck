@@ -1,8 +1,0 @@
-#!/usr/bin/env php
-<?php
-
-exec('git status -uno --short | grep -E \'^[AUM].*.php$\'| cut -c3-', $changes);
-
-foreach ($changes as $file) {
-    exec('php -l '.trim($file), $results);
-}

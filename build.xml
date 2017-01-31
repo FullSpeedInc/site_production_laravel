@@ -16,7 +16,7 @@
 
     <!-- コミット予定ファイルからsyntaxError検出 -->
     <target name="syntaxCheck">
-        <exec command="php syntaxCheck" logoutput="true" />
+        <exec command="vendor/bin/parallel-lint  --exclude vendor ." logoutput="true" />
     </target>
 
     <target name="build" depends="prepare, php-cs-fixer, syntaxCheck" />
